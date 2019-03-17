@@ -1,0 +1,36 @@
+<div class="parent">
+<h2 mat-dialog-title>Edit Articulo</h2>
+<mat-dialog-content [formGroup]="articulosForm" class="container">
+  <mat-form-field appearance="standard" class="mat-column-small">
+    <mat-label>ID</mat-label>
+    <input type="number" matInput placeholder="ID" formControlName="codigoArticulo"
+           [errorStateMatcher]="matcher" autocomplete="off">
+    <mat-icon matSuffix class="small-icon">place</mat-icon>
+    <mat-error *ngIf="!articulosForm.get('codigoArticulo').valid &&
+          articulosForm.get('codigoArticulo').touched">Enter valid ID
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="standard" class="mat-column-big">
+    <mat-label>Description</mat-label>
+    <input type="text" matInput placeholder="Description" formControlName="descripcionArticulo"
+           [errorStateMatcher]="matcher" autocomplete="off">
+    <mat-icon matSuffix class="small-icon">info</mat-icon>
+    <mat-error *ngIf="!articulosForm.get('descripcionArticulo').valid &&
+          articulosForm.get('descripcionArticulo').touched">Enter valid description
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="standard" class="mat-column-small">
+    <mat-label>Price</mat-label>
+    <input type="number" matInput placeholder="Price" formControlName="precioUnidadArticulo"
+           [errorStateMatcher]="matcher" autocomplete="off">
+    <mat-icon matSuffix class="small-icon">attach_money</mat-icon>
+    <mat-error *ngIf="!articulosForm.get('precioUnidadArticulo').valid &&
+          articulosForm.get('precioUnidadArticulo').touched">Enter valid price
+    </mat-error>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary" (click)="save()" [disabled]="!articulosForm.valid">Save</button>
+</mat-dialog-actions>
+</div>

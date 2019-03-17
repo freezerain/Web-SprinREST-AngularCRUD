@@ -1,0 +1,9 @@
+<div class="mat-app-background">
+  <router-outlet></router-outlet>
+  <mat-toolbar>
+    <span class="text-fill-space">Web CRUD application for "Articulos" table using Spring and Angular</span>
+  </mat-toolbar>
+  <app-progress-bar></app-progress-bar>
+  <app-articulos-add (addedArticulo)="onAdded($event)"></app-articulos-add>
+  <app-articulos></app-articulos>
+</div>

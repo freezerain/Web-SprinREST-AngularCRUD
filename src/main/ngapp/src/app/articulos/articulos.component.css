@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+  padding: 5px;
+    min-height: 200px;
+}
+table {
+  width: 100%;
+  position: relative;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.mat-column-codigoArticulo,
+.mat-column-precioUnidadArticulo{
+  width: 64px;
+}
+.mat-column-actions{
+  width: 128px;
+}
+.mat-paginator-sticky {
+  bottom: 0px;
+  position: sticky;
+  z-index: 10;
+}

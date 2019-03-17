@@ -1,0 +1,49 @@
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.small-icon {
+  margin: 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.mat-column-small,
+.mat-column-big {
+  margin: 0;
+  padding: 0;
+}
+
+.mat-column-small {
+  max-width: 75px;
+  flex: 0.2 1 auto;
+}
+
+.form-field {
+  font-size: 16px;
+  margin: 0%;
+}
+
+.container {
+  position: relative;
+  padding: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-inside: 0;
+}
+
+.button {
+  flex: 0 1 auto;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,40 @@
+<mat-card class="container">
+  <mat-card-header>
+    <mat-icon mat-card-avatar class="title">add_comment</mat-icon>
+    <mat-card-title class="title">Add new Articulo</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="articulosForm" (ngSubmit)="onFormSubmit(articulosForm.value)" class="form">
+      <mat-form-field appearance="standard" class="mat-column-small">
+        <mat-label>ID</mat-label>
+        <input type="number" matInput placeholder="ID" formControlName="codigoArticulo"
+               [errorStateMatcher]="matcher" autocomplete="off">
+        <mat-icon matSuffix class="small-icon">place</mat-icon>
+        <mat-error *ngIf="!articulosForm.get('codigoArticulo').valid &&
+          articulosForm.get('codigoArticulo').touched">Enter valid ID
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="standard" class="mat-column-big">
+        <mat-label>Description</mat-label>
+        <input type="text" matInput placeholder="Description" formControlName="descripcionArticulo"
+               [errorStateMatcher]="matcher" autocomplete="off">
+        <mat-icon matSuffix class="small-icon">info</mat-icon>
+        <mat-error *ngIf="!articulosForm.get('descripcionArticulo').valid &&
+          articulosForm.get('descripcionArticulo').touched">Enter valid description
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="standard" class="mat-column-small">
+        <mat-label>Price</mat-label>
+        <input type="number" matInput placeholder="Price" formControlName="precioUnidadArticulo"
+               [errorStateMatcher]="matcher" autocomplete="off">
+        <mat-icon matSuffix class="small-icon">attach_money</mat-icon>
+        <mat-error *ngIf="!articulosForm.get('precioUnidadArticulo').valid &&
+          articulosForm.get('precioUnidadArticulo').touched">Enter valid price
+        </mat-error>
+      </mat-form-field>
+      <button type="submit" mat-flat-button color="primary" [disabled]="!articulosForm.valid" class="button">
+        <mat-icon>add</mat-icon>
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
